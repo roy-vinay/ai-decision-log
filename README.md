@@ -13,6 +13,18 @@ Numbers are illustrative and company-agnostic. The reasoning is the point.
 
 | ID | Decision | Area |
 | --- | --- | --- |
+| [D-002](decisions/D-002-how-many-evals-are-enough.md) | How many evals are enough? | Evaluation |
+
+### Coming next
+
+| ID | Decision |
+| --- | --- |
+| D-003 | Rules or an LLM classifier for prompt-injection screening? |
+| D-004 | RAG or long context for a policy knowledge base? |
+| D-005 | One model, or route between a small and a large one? |
+| D-006 | Structured output or free text for customer-facing answers? |
+| D-007 | When is fine-tuning worth it? |
+| D-008 | Should an agent explain its decision to the user? |
 
 ## Format
 
