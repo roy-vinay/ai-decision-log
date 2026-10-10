@@ -13,6 +13,7 @@ Numbers are illustrative and company-agnostic. The reasoning is the point.
 
 | ID | Decision | Area |
 | --- | --- | --- |
+| [D-001](decisions/D-001-ticket-routing-rules-llm-hybrid.md) | Rules, LLM, or hybrid for support ticket routing | Agent architecture, cost |
 | [D-002](decisions/D-002-how-many-evals-are-enough.md) | How many evals are enough? | Evaluation |
 
 ### Coming next
