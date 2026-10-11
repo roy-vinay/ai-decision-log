@@ -15,17 +15,18 @@ Numbers are illustrative and company-agnostic. The reasoning is the point.
 | --- | --- | --- |
 | [D-001](decisions/D-001-ticket-routing-rules-llm-hybrid.md) | Rules, LLM, or hybrid for support ticket routing | Agent architecture, cost |
 | [D-002](decisions/D-002-how-many-evals-are-enough.md) | How many evals are enough? | Evaluation |
+| [D-003](decisions/D-003-when-should-a-bi-bot-stay-quiet.md) | When should a BI bot answer, and when should it stay quiet? | Evaluation, trust |
 
 ### Coming next
 
 | ID | Decision |
 | --- | --- |
-| D-003 | Rules or an LLM classifier for prompt-injection screening? |
-| D-004 | RAG or long context for a policy knowledge base? |
-| D-005 | One model, or route between a small and a large one? |
-| D-006 | Structured output or free text for customer-facing answers? |
-| D-007 | When is fine-tuning worth it? |
-| D-008 | Should an agent explain its decision to the user? |
+| D-004 | Rules or an LLM classifier for prompt-injection screening? |
+| D-005 | RAG or long context for a policy knowledge base? |
+| D-006 | One model, or route between a small and a large one? |
+| D-007 | Structured output or free text for customer-facing answers? |
+| D-008 | When is fine-tuning worth it? |
+| D-009 | Should an agent explain its decision to the user? |
 
 ## Format
 
@@ -39,7 +40,8 @@ program at UC Berkeley Executive Education. Writing on [Medium](https://vinaysay
 [Substack](https://vinayroy.substack.com).
 
 Related: [production-agent-patterns](https://github.com/roy-vinay/production-agent-patterns), runnable
-code for the patterns these decisions lean on.
+code for the patterns these decisions lean on, and [enterprise-ai-platform](https://github.com/roy-vinay/enterprise-ai-platform),
+the eval harness behind D-003.
 
 ## License
 
