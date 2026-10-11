@@ -14,15 +14,21 @@ Each case: (id, expected, cost_weight, answered, correct, agreement)
   agreement    share of the 3 runs that gave the most common answer
 
 Policies
-  answer      ship whatever the bot answers
-  unanimous   only show an answer when all 3 runs agree; otherwise hand off
+  answer      show whatever the bot answers (1 model call per question)
+  unanimous   ask 3 times; show the answer only if all 3 runs agree,
+              otherwise hand off (3 model calls per question)
   abstain     never show a number; every question goes to an analyst
+              (0 model calls)
 
-Costs
-  wrong answer shown       cost_weight
-  answerable question      handoff_cost (an analyst picks it up)
-    not shown
-  correct clarify/refuse   0
+Costs, in units where 1 = the cost of one analyst hand-off unless stated
+  wrong answer shown      cost_weight (1 to 5)
+  no number shown         handoff, for EVERY question: a correct refusal or a
+                          clarifying question still ends with a person
+                          looking at it, as does a deliberate abstention
+  model call              call_cost per call (set to 0 to exclude inference)
+
+Approximation: the data has 3 runs per question, and "answer" uses the
+majority answer as a stand-in for what a single run would show.
 """
 
 RUNS = {
@@ -53,51 +59,59 @@ RUNS = {
 }
 
 
-def cost(cases, policy: str, handoff: float) -> float:
-    total = 0.0
+CALLS = {"answer": 1, "unanimous": 3, "abstain": 0}
+POLICIES = tuple(CALLS)
+
+
+def cost(cases, policy: str, handoff: float, call_cost: float = 0.0) -> float:
+    total = CALLS[policy] * call_cost * len(cases)
     for _, expected, weight, answered, correct, agreement in cases:
         shown = answered and (policy == "answer" or (policy == "unanimous" and agreement == 1.0))
-        if shown and not correct:
-            total += weight
-        elif not shown and expected == "a":
+        if shown:
+            total += 0 if correct else weight
+        else:
             total += handoff
     return total
+
+
+def best(cases, handoff: float, call_cost: float = 0.0) -> str:
+    return min(POLICIES, key=lambda p: (cost(cases, p, handoff, call_cost), CALLS[p]))
+
+
+def bands(cases, call_cost: float = 0.0, hi: float = 10.0, step: float = 0.01):
+    """Which policy is cheapest across a range of hand-off costs."""
+    out, h = [], 0.0
+    while h <= hi + 1e-9:
+        b = best(cases, h, call_cost)
+        if not out or out[-1][0] != b:
+            out.append([b, h, h])
+        out[-1][2] = h
+        h = round(h + step, 2)
+    return out
 
 
 def stats(cases):
     answered = [c for c in cases if c[3]]
     wrong = [c for c in answered if not c[4]]
-    confident_wrong = [c for c in wrong if c[5] == 1.0]
     unanimous = [c for c in answered if c[5] == 1.0]
-    right_when_unanimous = sum(c[4] for c in unanimous)
     return {
         "accuracy on answerable": sum(c[4] for c in cases if c[1] == "a") / sum(c[1] == "a" for c in cases),
         "correct clarify/refuse": sum(c[4] for c in cases if c[1] != "a") / sum(c[1] != "a" for c in cases),
-        "wrong answers shown (answer)": len(wrong),
-        "wrong even though all runs agreed": len(confident_wrong),
-        "share of wrong answers that were unanimous": len(confident_wrong) / len(wrong),
-        "accuracy when all runs agree": right_when_unanimous / len(unanimous),
+        "numbers shown, answer / unanimous": f"{len(answered)} / {len(unanimous)}",
+        "wrong answers that were unanimous": len([c for c in wrong if c[5] == 1.0]) / len(wrong),
+        "accuracy when all runs agree": sum(c[4] for c in unanimous) / len(unanimous),
     }
-
-
-def crossover(cases, policy: str) -> float | None:
-    """Smallest handoff cost at which `policy` beats abstaining on everything."""
-    h = 0.0
-    while h <= 10:
-        if cost(cases, policy, h) < cost(cases, "abstain", h):
-            return h
-        h = round(h + 0.05, 2)
-    return None
 
 
 for name, cases in RUNS.items():
     print(f"\n{name}")
     for k, v in stats(cases).items():
-        print(f"  {k:<44} {v:.0%}" if isinstance(v, float) else f"  {k:<44} {v}")
-    print("  cost by policy (handoff cost = 1, 2, 3):")
-    for policy in ("answer", "unanimous", "abstain"):
-        print(f"    {policy:<10}" + "".join(f"{cost(cases, policy, h):>7.0f}" for h in (1, 2, 3)))
-    for policy in ("answer", "unanimous"):
-        x = crossover(cases, policy)
-        print(f"  '{policy}' beats abstaining once a handoff costs more than "
-              f"{x:.2f}" if x is not None else f"  '{policy}' never beats abstaining (handoff up to 10)")
+        print(f"  {k:<36} {v:.0%}" if isinstance(v, float) else f"  {k:<36} {v}")
+    print("  cost by policy, hand-off = 1 / 2 / 4 (inference excluded):")
+    for p in POLICIES:
+        print(f"    {p:<10}" + "".join(f"{cost(cases, p, h):>7.0f}" for h in (1, 2, 4)))
+    for cc in (0.0, 0.05):
+        label = "inference excluded" if cc == 0 else f"model call = {cc} hand-offs"
+        print(f"  cheapest policy by hand-off cost ({label}):")
+        for p, lo, hi in bands(cases, cc):
+            print(f"    {lo:>5.2f} to {hi:>5.2f}  {p}")
