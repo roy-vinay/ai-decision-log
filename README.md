@@ -1,4 +1,7 @@
-# AI Decision Log
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/masthead-dark.svg">
+  <img src=".github/assets/masthead-light.svg" width="100%" alt="AI Decision Log: one-page memos on applied AI product choices. By Vinay Roy.">
+</picture>
 
 One-page memos on real product decisions in applied AI: what the options were, the numbers, what was
 picked, and what would change the answer.
