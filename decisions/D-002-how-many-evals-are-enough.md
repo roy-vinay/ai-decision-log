@@ -1,6 +1,9 @@
-# D-002: How many evals are enough?
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../.github/assets/d-002-masthead-dark.svg">
+  <img src="../.github/assets/d-002-masthead-light.svg" width="100%" alt="D-002: how many evals are enough? Decided.">
+</picture>
 
-**Status:** Decided · **Area:** Evaluation · **Model:** [`models/d002_eval_sample_size.py`](../models/d002_eval_sample_size.py)
+The numbers come from [`models/d002_eval_sample_size.py`](../models/d002_eval_sample_size.py), so you can change the assumptions and rerun it.
 
 ## Context
 

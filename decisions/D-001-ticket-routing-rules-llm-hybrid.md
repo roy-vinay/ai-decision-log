@@ -1,6 +1,9 @@
-# D-001: Rules, LLM, or hybrid for support ticket routing
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../.github/assets/d-001-masthead-dark.svg">
+  <img src="../.github/assets/d-001-masthead-light.svg" width="100%" alt="D-001: rules, LLM, or hybrid for support ticket routing. Decided.">
+</picture>
 
-**Status:** Decided · **Area:** Agent architecture, cost · **Model:** [`models/d001_cost_model.py`](../models/d001_cost_model.py)
+The numbers come from [`models/d001_cost_model.py`](../models/d001_cost_model.py), so you can change the assumptions and rerun it.
 
 ## Context
 

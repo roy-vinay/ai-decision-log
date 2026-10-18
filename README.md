@@ -22,14 +22,12 @@ Numbers are illustrative and company-agnostic. The reasoning is the point.
 
 ### Coming next
 
-| ID | Decision |
-| --- | --- |
-| D-004 | Rules or an LLM classifier for prompt-injection screening? |
-| D-005 | RAG or long context for a policy knowledge base? |
-| D-006 | One model, or route between a small and a large one? |
-| D-007 | Structured output or free text for customer-facing answers? |
-| D-008 | When is fine-tuning worth it? |
-| D-009 | Should an agent explain its decision to the user? |
+- **D-004.** Rules or an LLM classifier for prompt-injection screening?
+- **D-005.** RAG or long context for a policy knowledge base?
+- **D-006.** One model, or route between a small and a large one?
+- **D-007.** Structured output or free text for customer-facing answers?
+- **D-008.** When is fine-tuning worth it?
+- **D-009.** Should an agent explain its decision to the user?
 
 ## Format
 
