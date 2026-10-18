@@ -51,13 +51,11 @@ For seven years I was Head Instructor for the AI/ML executive program at UC Berk
   <img alt="ASCII portrait of Vinay Roy. VP of Product at Burq.ai; builds AI, agents, evals and decision systems." src="https://raw.githubusercontent.com/roy-vinay/roy-vinay/main/light_mode.svg" width="985">
 </picture>
 
-## License
-
-Memos: CC BY 4.0. Code: MIT.
-
 ---
 
-![🔒 Independent Project](https://img.shields.io/badge/%F0%9F%94%92%20Independent-Project-475569?style=flat)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-475569?style=flat)](LICENSE) [![Memos: CC BY 4.0](https://img.shields.io/badge/Memos-CC%20BY%204.0-0F766E?style=flat)](https://creativecommons.org/licenses/by/4.0/) ![🔒 Independent Project](https://img.shields.io/badge/%F0%9F%94%92%20Independent-Project-475569?style=flat)
+
+<sub>Code under the <a href="LICENSE">MIT License</a> · Memos under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</sub>
 
 <sub><strong>Independently developed.</strong> Not affiliated with or endorsed by my employer.</sub><br>
 <sub><strong>Confidentiality:</strong> No proprietary code, data, or confidential information is included.</sub>
