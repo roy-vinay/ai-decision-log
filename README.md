@@ -14,11 +14,11 @@ Numbers are illustrative and company-agnostic. The reasoning is the point.
 
 ## Decisions
 
-| ID | Decision | Area |
-| --- | --- | --- |
-| [D-001](decisions/D-001-ticket-routing-rules-llm-hybrid.md) | Rules, LLM, or hybrid for support ticket routing | Agent architecture, cost |
-| [D-002](decisions/D-002-how-many-evals-are-enough.md) | How many evals are enough? | Evaluation |
-| [D-003](decisions/D-003-when-should-a-bi-bot-stay-quiet.md) | When should a BI bot answer, and when should it stay quiet? | Evaluation, trust |
+<p>
+<a href="decisions/D-001-ticket-routing-rules-llm-hybrid.md"><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/tile-d-001-dark.svg"><img src=".github/assets/tile-d-001-light.svg" width="32%" alt="D-001: rules, LLM, or hybrid for support ticket routing?"></picture></a>
+<a href="decisions/D-002-how-many-evals-are-enough.md"><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/tile-d-002-dark.svg"><img src=".github/assets/tile-d-002-light.svg" width="32%" alt="D-002: how many evals are enough?"></picture></a>
+<a href="decisions/D-003-when-should-a-bi-bot-stay-quiet.md"><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/tile-d-003-dark.svg"><img src=".github/assets/tile-d-003-light.svg" width="32%" alt="D-003: when should a BI bot answer, and when should it stay quiet?"></picture></a>
+</p>
 
 ### Coming next
 
@@ -36,11 +36,11 @@ Numbers are illustrative and company-agnostic. The reasoning is the point.
 Every memo follows [`TEMPLATE.md`](TEMPLATE.md): Context, Options, Evidence, Decision, Why,
 Trade-offs accepted, Revisit if. One page, no more.
 
-## Author
+## About
 
-[Vinay Roy](https://github.com/roy-vinay). VP of Product at Burq, Head Instructor for the AI/ML executive
-program at UC Berkeley Executive Education. Writing on [Medium](https://vinaysays.medium.com) and
-[Substack](https://vinayroy.substack.com).
+<a href="https://www.linkedin.com/in/royvinay"><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/about-dark.svg"><img src=".github/assets/about-light.svg" width="100%" alt="About Vinay Roy: VP of Product at Burq.ai, leading Product and AI. Career from NVIDIA (2008), Qualcomm, Apple (Sidecar), Zeus Living, Vista, and a founding product role at an AI SaaS startup, to Burq.ai. Seven years as Head Instructor for the AI/ML executive program at UC Berkeley Executive Education. 3 US patents, MBA from Berkeley Haas, MS from IIT Roorkee."></picture></a>
+
+Writing on [Substack](https://vinayroy.substack.com) and [Medium](https://vinaysays.medium.com). More projects at [github.com/roy-vinay](https://github.com/roy-vinay).
 
 Related: [production-agent-patterns](https://github.com/roy-vinay/production-agent-patterns), runnable
 code for the patterns these decisions lean on, and [enterprise-ai-platform](https://github.com/roy-vinay/enterprise-ai-platform),
