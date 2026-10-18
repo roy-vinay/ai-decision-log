@@ -1,6 +1,9 @@
-# D-003: When should a BI bot answer, and when should it stay quiet?
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../.github/assets/d-003-masthead-dark.svg">
+  <img src="../.github/assets/d-003-masthead-light.svg" width="100%" alt="D-003: when should a BI bot answer, and when should it stay quiet? Decided, no launch yet.">
+</picture>
 
-**Status:** Decided (no launch yet) · **Area:** Evaluation, trust, cost · **Model:** [`models/d003_when_to_abstain.py`](../models/d003_when_to_abstain.py)
+The numbers come from [`models/d003_when_to_abstain.py`](../models/d003_when_to_abstain.py), so you can change the assumptions and rerun it.
 
 ## Context
 
