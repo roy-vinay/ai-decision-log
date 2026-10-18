@@ -47,3 +47,7 @@ the eval harness behind D-003.
 ## License
 
 Memos: CC BY 4.0. Code: MIT.
+
+---
+
+*Independent project; not affiliated with or endorsed by my employer. No proprietary code, data, or confidential information.*
