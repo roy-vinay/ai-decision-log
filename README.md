@@ -20,16 +20,17 @@ Numbers are illustrative and company-agnostic. The reasoning is the point.
 <a href="decisions/D-001-ticket-routing-rules-llm-hybrid.md"><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/tile-d-001-dark.svg"><img src=".github/assets/tile-d-001-light.svg" width="32%" alt="D-001: rules, LLM, or hybrid for support ticket routing?"></picture></a>
 <a href="decisions/D-002-how-many-evals-are-enough.md"><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/tile-d-002-dark.svg"><img src=".github/assets/tile-d-002-light.svg" width="32%" alt="D-002: how many evals are enough?"></picture></a>
 <a href="decisions/D-003-when-should-a-bi-bot-stay-quiet.md"><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/tile-d-003-dark.svg"><img src=".github/assets/tile-d-003-light.svg" width="32%" alt="D-003: when should a BI bot answer, and when should it stay quiet?"></picture></a>
+<a href="decisions/D-004-what-should-a-content-agent-fix-first.md"><picture><source media="(prefers-color-scheme: dark)" srcset=".github/assets/tile-d-004-dark.svg"><img src=".github/assets/tile-d-004-light.svg" width="32%" alt="D-004: what should a content agent fix first, the draft or the review?"></picture></a>
 </p>
 
 ### Coming next
 
-- **D-004.** Rules or an LLM classifier for prompt-injection screening?
-- **D-005.** RAG or long context for a policy knowledge base?
-- **D-006.** One model, or route between a small and a large one?
-- **D-007.** Structured output or free text for customer-facing answers?
-- **D-008.** When is fine-tuning worth it?
-- **D-009.** Should an agent explain its decision to the user?
+- **D-005.** Rules or an LLM classifier for prompt-injection screening?
+- **D-006.** RAG or long context for a policy knowledge base?
+- **D-007.** One model, or route between a small and a large one?
+- **D-008.** Structured output or free text for customer-facing answers?
+- **D-009.** When is fine-tuning worth it?
+- **D-010.** Should an agent explain its decision to the user?
 
 ## Format
 
